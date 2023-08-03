@@ -1,7 +1,6 @@
 let productsDom = document.querySelector('.products');
 let noProductsDom = document.querySelector('.noProducts');
 let tableDom = document.querySelector('.p-table');
-let badge = document.querySelector('.badge')
 var TableData = new Array();
 var quantity = new Array();
 var oldq = new Array();
@@ -9,7 +8,6 @@ var total=0;
 
 function drawCartProducts(allProducts){
     if (JSON.parse(localStorage.getItem('productsInCart')).length === 0) {
-        badge.style.display = 'none'
         tableDom.style.display = "none";
         noProductsDom.innerHTML = `<p>There is no products in cart !!</p>`
     }

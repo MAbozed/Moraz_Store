@@ -2,7 +2,6 @@ let relatedDom = document.querySelector('.related-products');
 let products = productsDB.all;
 let productId = localStorage.getItem('productId');
 let singleDom = document.querySelector('.single');
-let badge = document.querySelector('.badge')
 let productDetails = products.find((item) => item.id == productId);
 
 singleDom.innerHTML = `
@@ -20,9 +19,6 @@ singleDom.innerHTML = `
             `
 
 function DrawUI(arr , classDom) {
-    if (JSON.parse(localStorage.getItem('productsInCart')).length === 0) {
-        badge.style.display = 'none'
-    }
     let productUI = arr.map((item) => {
         return (
             `<div onclick="getItem(${item.id})" class="product text-center col-lg-3 col-md-4 col-12">
